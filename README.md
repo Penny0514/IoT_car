@@ -1,11 +1,11 @@
 # IoT_car
-## Inteoduction
+## Introduction
 This is a redio control car, which you can control it on your mobile phone 
-### Features
+## Features
 1. A camera is set at the front of the car to stream the video on your phone, so you can see if there is any obstacle
 2. A sensor can help you to stop automatically to avoid collision
 3. You can control the speed of motors by slider on the web interface
-### Prepare
+## Prepare
 - Car kit
 - DC motor*4
 - Camera
@@ -85,6 +85,8 @@ Return the result in the end of the function
     print(distance)
     return distance
 ```
+Click this link for more detail
+https://tutorials-raspberrypi.com/raspberry-pi-ultrasonic-sensor-hc-sr04/
 
 ## Video Streaming
 
@@ -111,10 +113,11 @@ The above script streams your camera video on an **index.html** page as below:
 ```
 Click this link for more detail
 https://www.instructables.com/id/Video-Streaming-Web-Server/
+
 ## Control wheels
 Take an example of controlling the car go forward
 #### index.html 
-When press the image button, it pass a request to **testMotor2.py** and do the method **post**
+When press the image button, it send a request to **testMotor2.py** and do the method **post**
 ```
 <td>
   <form action="/forward" method="post">
@@ -142,6 +145,7 @@ def forward():
     autoBack(0.5) // go backward for 0.5 second
     return render_template('index.html')
 ```
+reference link: https://blog.csdn.net/weixin_42534940/article/details/81415768#5.%20%E5%B0%8F%E8%BD%A6%E6%8E%A7%E5%88%B6%E7%A8%8B%E5%BA%8F%EF%BC%88%E6%96%87%E4%BB%B6%E5%90%8D%E4%B8%BA%EF%BC%9Acar_controler.py%EF%BC%89%EF%BC%9A
 
 ## PWM
 Set up the pin on your respberry pi
