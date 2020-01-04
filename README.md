@@ -189,6 +189,6 @@ index.html
       </form>
 </div>
 ```
-## Final P
+## Final Product
 Put all the function together and assemble your car, try to use tape to fixed those stuff together
 
