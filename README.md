@@ -6,15 +6,15 @@ This is a redio control car, which you can control it on your mobile phone
 2. A sensor can help you to stop automatically to avoid collision
 3. You can control the speed of motors by slider on the web interface
 ### Prepare
-- 四驅自走車
-- 直流馬達*4
-- 鏡頭*2
-- 電池盒*2
-- 電池*8
-- 超音波感測器
-- L298N 馬達驅動板
-- 杜邦線
-- 麵包板
+- Car kit
+- DC motor*4
+- Camera
+- Battery box*2
+- Battery*8
+- HC-SR04 Sensor
+- L298N motor driver
+- Dupont Line
+- Breadboard
 ## Before Getting Start
 The first thing to do is to install Flask on your Raspberry Pi. Go to Terminal and enter:
 ```python
@@ -114,8 +114,8 @@ https://www.instructables.com/id/Video-Streaming-Web-Server/
 
 ## PWM
 Set up the pin on your respberry pi
-> gpio.PWM ( pin, frequency ) 
 
+**gpio.PWM ( pin, frequency )**
 > Note: the higher frequency you give, the more smoothly they turn
 
 ```
