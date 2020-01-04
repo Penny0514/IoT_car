@@ -80,3 +80,29 @@ Return the result in the end of the function
     print(distance)
     return distance
 ```
+
+## Video Streaming
+
+**testMotor2.py**
+```
+def gen(camera):
+    """Video streaming generator function."""
+    while True:
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+
+
+@app.route('/video_feed')
+def video_feed():
+    """Video streaming route. Put this in the src attribute of an img tag."""
+    return Response(gen(Camera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+```
+The above script streams your camera video on an **index.html** page as below:
+``` 
+<img src="{{ url_for('video_feed') }}" width="50%" />
+```
+Click this link for more detail
+https://www.instructables.com/id/Video-Streaming-Web-Server/
