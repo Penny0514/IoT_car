@@ -111,6 +111,35 @@ The above script streams your camera video on an **index.html** page as below:
 ```
 Click this link for more detail
 https://www.instructables.com/id/Video-Streaming-Web-Server/
+## Control your Car
+#### index.html 
+When press the image button, it pass a request to **testMotor2.py** and do the method **post**
+```
+<td>
+  <form action="/forward" method="post">
+     <input type="image" class="img" src="../statics/img/forward.png" />
+  </form>
+</td>
+```
+#### testMotor2.py
+
+```
+@app.route('/forward', methods=['GET', 'POST'])
+```
+```
+def forward():
+    init()
+    while(distance() > 25):
+        gpio.output(N1, False)  
+        gpio.output(N2, True)
+        gpio.output(N3, True)
+        gpio.output(N4, False)
+        time.sleep(0.5)
+
+    stop()  //call stop function
+    autoBack(0.5) // go backward for 0.5 second
+    return render_template('index.html')
+```
 
 ## PWM
 Set up the pin on your respberry pi
@@ -140,4 +169,21 @@ pwm1.start(0)
 pwm1.ChangeDutyCycle(speed)
 pwm2.start(0)
 pwm2.ChangeDutyCycle(speed)
+```
+index.html
+```
+<div class="rangeSlider">
+      <form action="/controlSpeed" method="post">
+        <input
+          type="range"
+          name="speed"
+          min="1"
+          max="10"
+          class="mySlider"
+          id="sliderRange"
+        />
+        <p>Value: <span id="demo"></span></p>
+        <input type="submit" value="ok" />
+      </form>
+</div>
 ```
