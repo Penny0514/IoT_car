@@ -111,7 +111,7 @@ The above script streams your camera video on an **index.html** page as below:
 ```
 Click this link for more detail
 https://www.instructables.com/id/Video-Streaming-Web-Server/
-## Control your Car
+## Control wheels
 Take an example of controlling the car go forward
 #### index.html 
 When press the image button, it pass a request to **testMotor2.py** and do the method **post**
