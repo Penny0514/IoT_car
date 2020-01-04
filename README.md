@@ -45,6 +45,7 @@ Click this link for more detail
 https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=19&t=507s
 
 ## Sensor
+![](81618198_3802171866460465_14051518084808704_n.jpg)
 Define pins that are connected with sensor on the respberry pi
 ```
 TRIG = 26
