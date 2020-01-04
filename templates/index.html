@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Car App</title>
+    <link rel="stylesheet" href="../statics/style.css" />
+  </head>
+  <body>
+    <div id="title">Car Controller</div>
+    <div align="center">
+      <img src="{{ url_for('video_feed') }}" width="50%" />
+    </div>
+    <table align="center">
+      <tr>
+        <td></td>
+        <td>
+          <form action="/forward" method="post">
+            <input type="image" class="img" src="../statics/img/forward.png" />
+          </form>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <form action="/left" method="post">
+            <input type="image" class="img" src="../statics/img/left.png" />
+          </form>
+        </td>
+
+        <td>
+          <form action="/stop" method="post">
+            <input type="image" class="img" src="../statics/img/stop.png" />
+          </form>
+        </td>
+        <td>
+          <form action="/right" method="post">
+            <input type="image" class="img" src="../statics/img/right.png" />
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <form action="/back" method="post">
+            <input type="image" class="img" src="../statics/img/backward.png" />
+          </form>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div class="rangeSlider">
+      <form action="/controlSpeed" method="post">
+        <input
+          type="range"
+          name="speed"
+          min="1"
+          max="10"
+          class="mySlider"
+          id="sliderRange"
+        />
+        <p>Value: <span id="demo"></span></p>
+        <input type="submit" value="ok" />
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  var rangeSlider = document.getElementById("sliderRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = rangeSlider.value;
+
+  rangeSlider.oninput = function() {
+    output.innerHTML = this.value;
+  };
+</script>
