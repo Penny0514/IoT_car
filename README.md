@@ -45,6 +45,10 @@ Click this link for more detail
 https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=19&t=507s
 
 ## Sensor
+Be careful that raspberry pi can only afford input 3.5V. However, sensor returns 5V input to raspberry pi, so make sure that you connect resistance on the breadboard to decrease the voltage.
+
+> The way to connect resistance 
+
 ![](81618198_3802171866460465_14051518084808704_n.jpg)
 Define pins that are connected with sensor on the respberry pi
 ```
@@ -107,3 +111,33 @@ The above script streams your camera video on an **index.html** page as below:
 ```
 Click this link for more detail
 https://www.instructables.com/id/Video-Streaming-Web-Server/
+
+## PWM
+Set up the pin on your respberry pi
+> gpio.PWM ( pin, frequency ) 
+
+> Note: the higher frequency you give, the more smoothly they turn
+
+```
+N2 = 22
+N3 = 23
+gpio.setup(N2, gpio.OUT)
+gpio.setup(N3, gpio.OUT)
+pwm1 = gpio.PWM(N2, 100)
+pwm2 = gpio.PWM(N3, 100)
+```
+
+Get the paremeter *speed* pass from the slider in index.html, and mulitply 10 to percentage
+```
+value = request.form['speed']
+speed = int(value)*10  // the value of slider is 0~10
+```
+
+**start(0)** give pwm a initial speed   
+**ChangeDutyCycle(speed)** change the speed of wheels
+```
+pwm1.start(0)
+pwm1.ChangeDutyCycle(speed)
+pwm2.start(0)
+pwm2.ChangeDutyCycle(speed)
+```
