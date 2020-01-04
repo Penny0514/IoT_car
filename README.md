@@ -45,3 +45,38 @@ Click this link for more detail
 https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=19&t=507s
 
 ## Sensor
+Define pins that are connected with sensor on the respberry pi
+```
+TRIG = 26
+ECHO = 3
+gpio.setup(TRIG, gpio.OUT)
+gpio.setup(ECHO, gpio.IN)
+```
+
+We need to initiate the TRIG pin for ready to sensor 
+> Before turn the signal *True* to *False*, stay for a millisecond
+```
+def distance():
+    gpio.output(TRIG, True)
+    time.sleep(0.00001)
+    gpio.output(TRIG, False)
+```
+
+Calculate the time of distance with the formula
+> **Distance = Time X 34300 / 2**
+
+Return the result in the end of the function
+```
+    start = time.time()
+    stop = time.time()
+
+    while gpio.input(ECHO) == 0:
+        start = time.time()
+    while gpio.input(ECHO) == 1:
+        stop = time.time()
+
+    timeElapsed = stop - start
+    distance = (timeElapsed*34300)/2
+    print(distance)
+    return distance
+```
