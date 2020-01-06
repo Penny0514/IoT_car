@@ -195,4 +195,6 @@ index.html
 ```
 ## Final Product
 Put all the function together and assemble your car, try to use tape to fixed those stuff together
-Demo video https://www.youtube.com/watch?v=6ecvRyQtbPc
+![](82069071_859292874503230_353737973264547840_n.jpg)
+##Demo video 
+https://www.youtube.com/watch?v=6ecvRyQtbPc
