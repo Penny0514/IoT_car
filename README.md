@@ -1,6 +1,6 @@
 # IoT_car
 ## Introduction
-This is a redio control car, which you can control it on your mobile phone 
+This is a Radio-controlled car, which you can control it on your mobile phone 
 ## Features
 1. A camera is set at the front of the car to stream the video on your phone, so you can see if there is any obstacle
 2. A sensor can help you to stop automatically to avoid collision
@@ -24,8 +24,8 @@ Create a new folder to start your project
 ```
 mkdir webapp
 ```
-Go to the file you created, and new folders **templates** and **statics**
-These two files must under the folder **webapp**
+Go to the file you created, and new two folders **templates** and **statics**
+These two folders must under the folder **webapp**
 ```
 cd webapp
 mkdir templates
@@ -45,7 +45,7 @@ Click this link for more detail
 https://www.youtube.com/watch?v=bNOlimnWZJE&list=PLc6fhBPeC6SBbZFcrHLlPXyR2svfxf1RZ&index=19&t=507s
 
 ## Sensor
-Be careful that raspberry pi can only afford input 3.5V. However, sensor returns 5V input to raspberry pi, so make sure that you connect resistance on the breadboard to decrease the voltage.
+Be careful that raspberry pi can only afford input 3.5V. However, sensor returns 5V to raspberry pi, so make sure that you connect resistance on the breadboard to decrease the voltage.
 
 > The way to connect resistance 
 
@@ -107,7 +107,7 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 ```
-The above script streams your camera video on an **index.html** page as below:
+The above script streams your camera video on  **index.html** page as below:
 ``` 
 <img src="{{ url_for('video_feed') }}" width="50%" />
 ```
@@ -117,7 +117,7 @@ https://www.instructables.com/id/Video-Streaming-Web-Server/
 ## Control wheels
 Take an example of controlling the car go forward
 #### index.html 
-When press the image button, it send a request to **testMotor2.py** and do the method **post**
+When pressing the image button, it will send a request to **testMotor2.py** and do the method **post**
 ```
 <td>
   <form action="/forward" method="post">
